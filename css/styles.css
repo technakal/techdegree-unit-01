@@ -15,6 +15,7 @@ body {
   background-color: var(--color-main);
   color: var(--color-font);
   font-family: var(--font-main);
+  padding: 1rem;
 }
 
 #loadQuote {
@@ -24,4 +25,18 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.09), 0 3px 4px 2px rgba(0, 0, 0, 0.13);
   color: var(--color-bold);
   padding: 10px 15px;
+}
+
+.button-category {
+  background: var(--color-main);
+  border: 1px solid var(--color-accent);
+  border-radius: 10px;
+  color: var(--color-font);
+  font-size: 0.75rem;
+  padding: 5px 10px;
+}
+
+.active {
+  background: var(--color-accent);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.09), 0 3px 4px 2px rgba(0, 0, 0, 0.13);
 }
