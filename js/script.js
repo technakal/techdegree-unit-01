@@ -86,7 +86,7 @@ class ColorTheme {
   }
 }
 
-const quoteBoxElement = document.getElementById('quote-box');
+const quoteBoxElement = document.getElementById('container-quote');
 const quoteButtonElement = document.getElementById('loadQuote');
 const categoryContainer = document.getElementById('container-category');
 quoteButtonElement.addEventListener('click', event => handleClick(event));
@@ -102,7 +102,6 @@ const quotes = [
   new Quote(
     'In certain kinds of writing, particularly in art criticism and literary criticism, it is normal to come across long passages which are almost completely lacking in meaning.',
     'George Orwell',
-
     'writing',
     'Politics and the English Language',
     1946
@@ -117,6 +116,86 @@ const quotes = [
     'A. P. J. Abdul Kalam',
     'science'
   ),
+  new Quote(
+    'Success is not final; failure is not fatal: It is the courage to continue that counts.',
+    'Winston S. Churchill',
+    'success'
+  ),
+  new Quote(
+    'Nowadays people know the price of everything and the value of nothing.',
+    'Oscar Wilde',
+    'value',
+    'The Picture of Dorian Grey',
+    1890
+  ),
+  new Quote(
+    'Not all those who wander are lost.',
+    'J. R. R. Tolkien',
+    'adventure',
+    'The Lord of the Rings',
+    1954
+  ),
+  new Quote(
+    'Success usually comes to those who are too busy to be looking for it.',
+    'Henry David Thoreau',
+    'success'
+  ),
+  new Quote(
+    'Try not to become a man of success. Rather become a man of value.',
+    'Albert Einstein',
+    'value'
+  ),
+  new Quote(
+    'I owe my success to having listened respectfully to the very best advice, and then going away and doing the exact opposite.',
+    'G. K. Chesterton',
+    'success'
+  ),
+  new Quote(
+    'No act of kindness, no matter how small, is ever wasted.',
+    'Aesop',
+    'kindness'
+  ),
+  new Quote(
+    'By compassion one can be brave. By moderation one can be generous. By not claiming to be first in the world one can rule.',
+    'Lao Tsu',
+    'spirituality',
+    'Tao Te Ching',
+    '6th Century BCE'
+  ),
+  new Quote(
+    'This is my simple religion. There is no need for temples; no need for complicated philosophy. Our own brain, our own heart is our temple; the philosophy is kindness.',
+    'Dalai Lama',
+    'kindness'
+  ),
+  new Quote(
+    'You cannot do a kindness too soon, for you never know how soon it will be too late.',
+    'Ralph Waldo Emerson',
+    'kindness',
+  ),
+  new Quote(
+    'Every man’s life ends the same way. It is only the details of how he lived and how he died that distinguish one man from another.',
+    'Ernhest Hemingway',
+    'adventure',
+  ),
+  new Quote(
+    'Being against evil doesn\'t make you good. Tonight I was against it and then I was evil myself. I could feel it coming just like a tide... I just want to destroy them. But when you start taking pleasure in it you are awfully close to the thing you\'re fighting.',
+    'Ernest Hemingway',
+    'good and evil',
+    'Island in the Stream',
+    1970
+  ),
+  new Quote(
+    'Everything I do I rush through so I can do something else.',
+    'Stephen Dobyns',
+    'humanity',
+    'Cemetery Nights',
+    1997
+  ),
+  new Quote(
+    'The road to hell is paved with adverbs.',
+    'Steven King',
+    'writing'
+  )
 ];
 
 /**
@@ -248,7 +327,6 @@ const printQuote = arr => {
   quoteBoxElement.innerHTML = quoteString;
 };
 
-/** TODO: rework background color setup so that it can transition more smoothly. */
 /**
  * Selects the color palette at the passed index and triggers the updateColorScheme() method on that element.
  * @param {number} index - The index position.
@@ -257,8 +335,6 @@ const changeColorScheme = index => {
   backgroundThemes[index].updateColorScheme();
   return;
 };
-
-/** TODO: create onPageLoad method. */
 
 /**
  * Handles button clicks.
