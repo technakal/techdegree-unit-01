@@ -112,7 +112,7 @@ const quotes = [
     'science'
   ),
   new Quote(
-    'Science is a beautiful gift to humanity; we shoudl not distort it.',
+    'Science is a beautiful gift to humanity; we should not distort it.',
     'A. P. J. Abdul Kalam',
     'science'
   ),
