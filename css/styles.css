@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Exo:300i,400|Ranga:700');
 
 /* Random Quote Generator Styles */
+/* TODO: rework background color setup so that it can transition more smoothly. */
+
 :root {
-  --color-main: #FFF4B2; 
+  --color-main: #FFF4B2;
   --color-accent: #EA6B59;
   --color-font: #31384B;
   --color-bold: #FDF1EF;
@@ -19,7 +21,7 @@ body {
   background: var(--color-accent);
   border: 2px solid var(--color-bold);
   border-radius: 25px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.09), 0 3px 4px 2px rgba(0,0,0,0.13);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.09), 0 3px 4px 2px rgba(0, 0, 0, 0.13);
   color: var(--color-bold);
   padding: 10px 15px;
 }
