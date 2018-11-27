@@ -76,6 +76,7 @@ class ColorTheme {
 
   /**
    * Updates the UI interface to use the color palette.
+   * Had a little help on this one from Chris Covier (https://css-tricks.com/updating-a-css-variable-with-javascript/)
    */
   updateColorScheme() {
     let root = document.documentElement;
@@ -92,6 +93,7 @@ const categoryContainer = document.getElementById('container-category');
 quoteButtonElement.addEventListener('click', event => handleClick(event));
 
 let selectedCategory;
+let nextQuoteTimer;
 
 const quotes = [
   new Quote(
@@ -219,7 +221,7 @@ const getCategories = arr => {
 /**
  * Ensures each category in the categories array only appears once.
  * @param {array} arr - The array of categories to be reduced.
- * credit to @ChrisFerdinandi for the assist on this.(https:/**gomakethings.com/removing-duplicates-from-an-array-with-vanilla-javascript/).
+ * credit to @ChrisFerdinandi for the assist on this.(https://gomakethings.com/removing-duplicates-from-an-array-with-vanilla-javascript/).
  */
 const getUniqueCategories = arr => {
   return arr.filter((item, index) => arr.indexOf(item) >= index);
@@ -338,16 +340,30 @@ const changeColorScheme = index => {
 
 /**
  * Handles button clicks.
- * If the event was on the loadQuote button, print a new quote to the DOM.
+ * If the event was on the loadQuote button, triggers the loadNewQuote function.
  * If the event was on one of the category buttons, set the selectedCategory.
  * @param {event} event - The triggering event.
  */
 const handleClick = event => {
   if (event.target.id === 'loadQuote') {
-    printQuote(filterUsed(filterByCategory(quotes, selectedCategory)));
+    loadNewQuote(quotes)
     changeColorScheme(getRandomNumber(0, backgroundThemes.length));
     return;
   }
   setCategory(event.target);
   return;
 };
+
+/**
+ * Clears and resets the existing timeout so that a new quote will trigger after 30 seconds. Calls the printQuote method to output a new quote to the DOM.
+ * @param {array} arr - An array of quotes.
+ */
+const loadNewQuote = arr => {
+  clearTimeout(nextQuoteTimer);
+  printQuote(filterUsed(filterByCategory(arr, selectedCategory)));
+  nextQuoteTimer = setTimeout(function() {loadNewQuote(quotes)}, 30000);
+}
+
+nextQuoteTimer = setTimeout(function() {
+  loadNewQuote(quotes)}
+, 3000);
