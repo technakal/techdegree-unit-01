@@ -347,7 +347,6 @@ const changeColorScheme = index => {
 const handleClick = event => {
   if (event.target.id === 'loadQuote') {
     loadNewQuote(quotes)
-    changeColorScheme(getRandomNumber(0, backgroundThemes.length));
     return;
   }
   setCategory(event.target);
@@ -361,6 +360,7 @@ const handleClick = event => {
 const loadNewQuote = arr => {
   clearTimeout(nextQuoteTimer);
   printQuote(filterUsed(filterByCategory(arr, selectedCategory)));
+  changeColorScheme(getRandomNumber(0, backgroundThemes.length));
   nextQuoteTimer = setTimeout(function() {loadNewQuote(quotes)}, 30000);
 }
 
