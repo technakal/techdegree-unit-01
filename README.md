@@ -1,1 +1,2 @@
-# techdegree-unit-01
+# Random Quote Displayer
+## Techdegree Unit 01 Project
